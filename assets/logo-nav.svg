@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 128" role="img" aria-labelledby="title desc">
+<title>StrumentoSicuro</title><desc>Logo StrumentoSicuro compatto</desc>
+<g transform="translate(0,7)">
+  <path d="M64 8 L108 25 V58 C108 86 91 108 64 120 C37 108 20 86 20 58 V25 Z" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M72 30 V80 C72 92 63 100 50 100 C39 100 31 94 31 85 C31 76 39 70 50 70 C56 70 61 72 64 75 V30 Z" fill="#F2B705"/>
+  <path d="M72 30 C88 36 95 47 94 61 C87 54 82 51 72 49 Z" fill="#F2B705"/>
+</g>
+<text x="135" y="81" font-family="Inter, Poppins, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="-2.2" fill="#FFFFFF">Strumento</text>
+<text x="400" y="81" font-family="Inter, Poppins, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="-2.2" fill="#F2B705">Sicuro</text>
+</svg>

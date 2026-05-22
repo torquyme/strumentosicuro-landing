@@ -1,38 +1,30 @@
 # StrumentoSicuro landing page
 
-Pacchetto statico pronto per GitHub Pages.
+Pacchetto pronto per GitHub Pages con logo aggiornato al concept B/2: scudo + nota musicale.
 
-## Cosa modificare prima della pubblicazione
+## Pubblicazione
 
-1. In `index.html`, sostituire `https://formspree.io/f/INSERISCI_ID_FORM` con l’endpoint reale del form.
-2. Completare `privacy.html` con dati del titolare, servizio form e dettagli privacy reali.
-3. Revisionare `termini.html` prima di gestire transazioni reali.
-4. Verificare DNS e dominio custom `strumentosicuro.it` in GitHub Pages.
-
-## Asset inclusi
-
-- `assets/logo.svg` — logo completo
-- `assets/logo-light.svg` — logo completo per sfondi scuri
-- `assets/icon.svg` — icona logo
-- `assets/logo-horizontal.png` — logo PNG grande
-- `assets/logo-horizontal-light.png` — logo PNG grande per sfondi scuri
-- `assets/logo-icon-512.png` — icona PNG 512
-- `assets/icons/icon-16.png`, `icon-32.png`, `icon-64.png`, `icon-128.png`, `icon-180.png`, `icon-192.png`, `icon-256.png`, `icon-512.png`
-- `assets/og-image.png` — immagine anteprima social
-
+1. Carica tutti i file nella root del repository GitHub.
+2. Vai su Settings → Pages.
+3. Seleziona branch `main`, folder `/root`.
+4. Configura il dominio custom `strumentosicuro.it`.
 
 ## Formspree
 
-La landing usa Formspree per il modulo contatti.
+Nel file `index.html` sostituisci:
 
-1. Crea un account su https://formspree.io
-2. Crea un nuovo form per `info@strumentosicuro.it`
-3. Copia l’endpoint, nel formato `https://formspree.io/f/xxxxxxx`
-4. In `index.html`, sostituisci `https://formspree.io/f/INSERISCI_ID_FORM` con il tuo endpoint reale.
-5. Pubblica su GitHub Pages e invia un test dal form.
+```html
+https://formspree.io/f/INSERISCI_ID_FORM
+```
 
-Opzionale: in Formspree puoi impostare redirect, captcha/anti-spam e notifiche email.
+con il tuo endpoint Formspree reale.
 
-## Cookie e Privacy
+## Asset logo
 
-Sono incluse bozze di `privacy.html` e `cookie.html` aggiornate per l’uso di Formspree. Prima di mandare traffico reale, completale con i dati effettivi del titolare.
+- `assets/logo.svg` logo orizzontale su sfondo chiaro
+- `assets/logo-light.svg` logo orizzontale su sfondo scuro
+- `assets/logo-nav.svg` logo compatto per header
+- `assets/icon.svg` icona scudo + nota
+- `assets/icon-dark.svg` icona app/favicon
+- `assets/icons/` favicon e app icon in varie dimensioni
+- `assets/og-image.png` anteprima social
