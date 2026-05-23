@@ -1,147 +1,951 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>StrumentoSicuro — Compravendite protette per strumenti musicali usati</title>
-  <meta name="description" content="Compra e vendi strumenti musicali usati con pagamento protetto, spedizione tracciata e supporto italiano. Ideale per compravendite nate su Facebook, Subito, WhatsApp o Mercatino." />
-  <meta property="og:title" content="StrumentoSicuro" />
-  <meta property="og:description" content="Compravendite protette per strumenti musicali usati." />
-  <meta property="og:image" content="/assets/og-image.png" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/assets/icons/icon-180.png" />
-  <style>
-    :root{--navy:#0D1B2A;--navy2:#102A43;--gold:#F2B705;--gold2:#D99A00;--light:#F4F6F8;--text:#10233F;--muted:#64748B;--border:#E5E7EB;--white:#fff;--shadow:0 24px 70px rgba(13,27,42,.14)}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:#fff;line-height:1.55} a{color:inherit;text-decoration:none}.container{width:min(1120px,calc(100% - 40px));margin:0 auto}
-    .topbar{position:sticky;top:0;z-index:20;background:rgba(13,27,42,.96);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand img{display:block;width:245px;max-width:60vw;height:auto}.navlinks{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700;color:#D7E3F2}.navlinks a:hover{color:#fff}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:14px;padding:14px 20px;font-weight:800;cursor:pointer;transition:.18s ease;white-space:nowrap}.btn-primary{background:var(--gold);color:#061525;box-shadow:0 12px 28px rgba(242,183,5,.25)}.btn-primary:hover{background:var(--gold2);transform:translateY(-1px)}.btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.32)}.btn-secondary:hover{border-color:#fff;transform:translateY(-1px)}
-    .hero{background:radial-gradient(circle at 83% 15%,rgba(242,183,5,.16),transparent 28%),linear-gradient(135deg,#071426 0%,var(--navy) 58%,#0A2342 100%);color:#fff;padding:86px 0 72px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1fr .95fr;gap:54px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#FFE08A;border-radius:999px;padding:8px 12px;font-size:14px;font-weight:800;margin-bottom:24px}.hero h1{font-size:clamp(42px,6vw,72px);line-height:.96;letter-spacing:-.07em;margin:0 0 24px}.hero h1 strong{color:var(--gold)}.lead{font-size:20px;color:#D7E3F2;margin:0 0 32px;max-width:640px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}.trust{display:flex;gap:18px;flex-wrap:wrap;color:#C8D4E3;font-size:14px}.trust span{display:inline-flex;gap:7px;align-items:center}.panel{background:#fff;color:var(--text);border-radius:26px;padding:26px;box-shadow:0 30px 100px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.1)}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--border);padding-bottom:18px}.panel-logo{height:36px;width:auto}.safe-badge{background:#DCFCE7;color:#166534;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900}.transaction{padding-top:22px}.instrument-row{display:flex;gap:14px;align-items:center;margin-bottom:20px}.instrument-img{width:72px;height:56px;border-radius:16px;background:linear-gradient(135deg,#FDE68A,#F59E0B);display:grid;place-items:center;font-size:32px}.instrument-row strong{display:block}.instrument-row small{color:var(--muted)}.amount{margin-left:auto;font-size:22px;font-weight:900}.progress{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.step{text-align:center;font-size:12px;color:var(--muted)}.dot{width:34px;height:34px;border-radius:50%;background:#EEF2F7;margin:0 auto 8px;display:grid;place-items:center;font-weight:900;color:#94A3B8}.step.active .dot{background:var(--gold);color:#061525}.note{margin-top:20px;background:#F8FAFC;border:1px solid var(--border);padding:14px;border-radius:18px;color:#475569;font-size:14px}
-    section{padding:82px 0}.section-head{text-align:center;max-width:760px;margin:0 auto 44px}.section-head h2{font-size:clamp(31px,4vw,48px);line-height:1.05;letter-spacing:-.055em;margin:0 0 14px}.section-head p{font-size:18px;color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;border:1px solid var(--border);border-radius:24px;padding:26px;box-shadow:0 12px 35px rgba(13,27,42,.06)}.ico{width:50px;height:50px;border-radius:16px;background:#FFF7D6;color:#9A6A00;display:grid;place-items:center;font-size:25px;margin-bottom:16px}.card h3{margin:0 0 9px;font-size:22px;letter-spacing:-.03em}.card p{margin:0;color:var(--muted)}.how{background:#F8FAFC}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.flow .card{position:relative}.flow-num{position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:42px;align-items:center}.highlight{background:linear-gradient(135deg,#FFFBEB,#EFF6FF)}.checklist{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}.checklist li{display:flex;gap:10px;color:#334155}.checklist li:before{content:"✓";color:#16A34A;font-weight:900}.partner-box{background:#fff;border:1px solid var(--border);border-radius:28px;padding:32px;box-shadow:var(--shadow)}.partner-box h3{font-size:31px;line-height:1.08;letter-spacing:-.045em;margin:0 0 14px}.security-band{background:var(--navy);color:#fff;padding:28px 0}.security-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.security-item{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:center}.security-item .ico{margin:0;background:rgba(242,183,5,.12);color:var(--gold)}.security-item p{margin:3px 0 0;color:#C8D4E3;font-size:14px}.pricing{background:#fff}.pricing-box{max-width:850px;margin:0 auto;background:linear-gradient(135deg,#071426,var(--navy));color:#fff;border-radius:30px;padding:36px;box-shadow:var(--shadow)}.price-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}.price-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px}.price-card strong{display:block;color:#FFE08A;font-size:26px}.price-card span{color:#C8D4E3;font-size:14px}.form-section{background:#F8FAFC}.form-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}.form-copy h2{font-size:clamp(34px,4.5vw,54px);line-height:1.02;letter-spacing:-.06em;margin:0 0 16px}.form-copy p{color:#475569;font-size:18px}form{background:#fff;border:1px solid var(--border);border-radius:28px;padding:28px;display:grid;gap:14px;box-shadow:var(--shadow)}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:7px;font-size:13px;font-weight:800;color:#344054}input,select,textarea{width:100%;border:1px solid #D0D5DD;border-radius:14px;padding:13px 14px;font:inherit;color:var(--text);background:#fff;outline:none}textarea{min-height:112px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(242,183,5,.16)}.form-note{color:var(--muted);font-size:12px;margin:0}.privacy-check{display:flex;gap:10px;align-items:flex-start;font-weight:500;color:#475569}.privacy-check input{width:auto;margin-top:4px}footer{background:#06111F;color:#94A3B8;padding:36px 0;font-size:14px}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}.footer-logo{height:42px}.footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a:hover{color:#fff}
-    @media(max-width:960px){.hero-grid,.split,.form-wrap{grid-template-columns:1fr}.cards,.flow,.security-grid,.price-row{grid-template-columns:1fr}.navlinks{display:none}.hero{padding-top:58px}.field-grid{grid-template-columns:1fr}.panel{padding:20px}.progress{grid-template-columns:1fr 1fr}.brand img{width:220px}.footer-inner{align-items:flex-start}.amount{margin-left:0}.instrument-row{align-items:flex-start;flex-wrap:wrap}}
-  </style>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>StrumentoSicuro — Compravendite protette per strumenti musicali usati</title>
+    <meta name="description"
+          content="Compra e vendi strumenti musicali usati con pagamento protetto, spedizione tracciata e supporto italiano. Ideale per compravendite nate su Facebook, Subito, WhatsApp o Mercatino."/>
+    <meta property="og:title" content="StrumentoSicuro"/>
+    <meta property="og:description" content="Compravendite protette per strumenti musicali usati."/>
+    <meta property="og:image" content="/assets/og-image.png"/>
+    <meta property="og:type" content="website"/>
+    <link rel="icon" href="/favicon.ico" sizes="any"/>
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml"/>
+    <link rel="apple-touch-icon" href="/assets/icons/icon-180.png"/>
+    <style>
+        :root {
+            --navy: #0D1B2A;
+            --navy2: #102A43;
+            --gold: #F2B705;
+            --gold2: #D99A00;
+            --light: #F4F6F8;
+            --text: #10233F;
+            --muted: #64748B;
+            --border: #E5E7EB;
+            --white: #fff;
+            --shadow: 0 24px 70px rgba(13, 27, 42, .14)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.55
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(13, 27, 42, .96);
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+            backdrop-filter: blur(14px)
+        }
+
+        .nav {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px
+        }
+
+        .brand img {
+            display: block;
+            width: 245px;
+            max-width: 60vw;
+            height: auto
+        }
+
+        .navlinks {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #D7E3F2
+        }
+
+        .navlinks a:hover {
+            color: #fff
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 0;
+            border-radius: 14px;
+            padding: 14px 20px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .18s ease;
+            white-space: nowrap
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: #061525;
+            box-shadow: 0 12px 28px rgba(242, 183, 5, .25)
+        }
+
+        .btn-primary:hover {
+            background: var(--gold2);
+            transform: translateY(-1px)
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, .32)
+        }
+
+        .btn-secondary:hover {
+            border-color: #fff;
+            transform: translateY(-1px)
+        }
+
+        .hero {
+            background: radial-gradient(circle at 83% 15%, rgba(242, 183, 5, .16), transparent 28%), linear-gradient(135deg, #071426 0%, var(--navy) 58%, #0A2342 100%);
+            color: #fff;
+            padding: 86px 0 72px;
+            overflow: hidden
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns:1fr .95fr;
+            gap: 54px;
+            align-items: center
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, .16);
+            background: rgba(255, 255, 255, .08);
+            color: #FFE08A;
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 24px
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: .96;
+            letter-spacing: -.07em;
+            margin: 0 0 24px
+        }
+
+        .hero h1 strong {
+            color: var(--gold)
+        }
+
+        .lead {
+            font-size: 20px;
+            color: #D7E3F2;
+            margin: 0 0 32px;
+            max-width: 640px
+        }
+
+        .actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 28px
+        }
+
+        .trust {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            color: #C8D4E3;
+            font-size: 14px
+        }
+
+        .trust span {
+            display: inline-flex;
+            gap: 7px;
+            align-items: center
+        }
+
+        .panel {
+            background: #fff;
+            color: var(--text);
+            border-radius: 26px;
+            padding: 26px;
+            box-shadow: 0 30px 100px rgba(0, 0, 0, .3);
+            border: 1px solid rgba(255, 255, 255, .1)
+        }
+
+        .panel-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 18px
+        }
+
+        .panel-logo {
+            height: 36px;
+            width: auto
+        }
+
+        .safe-badge {
+            background: #DCFCE7;
+            color: #166534;
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 12px;
+            font-weight: 900
+        }
+
+        .transaction {
+            padding-top: 22px
+        }
+
+        .instrument-row {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            margin-bottom: 20px
+        }
+
+        .instrument-img {
+            width: 72px;
+            height: 56px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #FDE68A, #F59E0B);
+            display: grid;
+            place-items: center;
+            font-size: 32px
+        }
+
+        .instrument-row strong {
+            display: block
+        }
+
+        .instrument-row small {
+            color: var(--muted)
+        }
+
+        .amount {
+            margin-left: auto;
+            font-size: 22px;
+            font-weight: 900
+        }
+
+        .progress {
+            display: grid;
+            grid-template-columns:repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px
+        }
+
+        .step {
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .dot {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #EEF2F7;
+            margin: 0 auto 8px;
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+            color: #94A3B8
+        }
+
+        .step.active .dot {
+            background: var(--gold);
+            color: #061525
+        }
+
+        .note {
+            margin-top: 20px;
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            padding: 14px;
+            border-radius: 18px;
+            color: #475569;
+            font-size: 14px
+        }
+
+        section {
+            padding: 82px 0
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 44px
+        }
+
+        .section-head h2 {
+            font-size: clamp(31px, 4vw, 48px);
+            line-height: 1.05;
+            letter-spacing: -.055em;
+            margin: 0 0 14px
+        }
+
+        .section-head p {
+            font-size: 18px;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap: 22px
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 26px;
+            box-shadow: 0 12px 35px rgba(13, 27, 42, .06)
+        }
+
+        .ico {
+            width: 50px;
+            height: 50px;
+            border-radius: 16px;
+            background: #FFF7D6;
+            color: #9A6A00;
+            display: grid;
+            place-items: center;
+            font-size: 25px;
+            margin-bottom: 16px
+        }
+
+        .card h3 {
+            margin: 0 0 9px;
+            font-size: 22px;
+            letter-spacing: -.03em
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .how {
+            background: #F8FAFC
+        }
+
+        .flow {
+            display: grid;
+            grid-template-columns:repeat(4, 1fr);
+            gap: 18px
+        }
+
+        .flow .card {
+            position: relative
+        }
+
+        .flow-num {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-weight: 900
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns:.95fr 1.05fr;
+            gap: 42px;
+            align-items: center
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #FFFBEB, #EFF6FF)
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0 0;
+            display: grid;
+            gap: 12px
+        }
+
+        .checklist li {
+            display: flex;
+            gap: 10px;
+            color: #334155
+        }
+
+        .checklist li:before {
+            content: "✓";
+            color: #16A34A;
+            font-weight: 900
+        }
+
+        .partner-box {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 32px;
+            box-shadow: var(--shadow)
+        }
+
+        .partner-box h3 {
+            font-size: 31px;
+            line-height: 1.08;
+            letter-spacing: -.045em;
+            margin: 0 0 14px
+        }
+
+        .security-band {
+            background: var(--navy);
+            color: #fff;
+            padding: 28px 0
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap: 22px
+        }
+
+        .security-item {
+            display: grid;
+            grid-template-columns:54px 1fr;
+            gap: 16px;
+            align-items: center
+        }
+
+        .security-item .ico {
+            margin: 0;
+            background: rgba(242, 183, 5, .12);
+            color: var(--gold)
+        }
+
+        .security-item p {
+            margin: 3px 0 0;
+            color: #C8D4E3;
+            font-size: 14px
+        }
+
+        .pricing {
+            background: #fff
+        }
+
+        .pricing-box {
+            max-width: 850px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #071426, var(--navy));
+            color: #fff;
+            border-radius: 30px;
+            padding: 36px;
+            box-shadow: var(--shadow)
+        }
+
+        .price-row {
+            display: grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 24px
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 20px;
+            padding: 18px
+        }
+
+        .price-card strong {
+            display: block;
+            color: #FFE08A;
+            font-size: 26px
+        }
+
+        .price-card span {
+            color: #C8D4E3;
+            font-size: 14px
+        }
+
+        .form-section {
+            background: #F8FAFC
+        }
+
+        .form-wrap {
+            display: grid;
+            grid-template-columns:.9fr 1.1fr;
+            gap: 44px;
+            align-items: start
+        }
+
+        .form-copy h2 {
+            font-size: clamp(34px, 4.5vw, 54px);
+            line-height: 1.02;
+            letter-spacing: -.06em;
+            margin: 0 0 16px
+        }
+
+        .form-copy p {
+            color: #475569;
+            font-size: 18px
+        }
+
+        form {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 28px;
+            display: grid;
+            gap: 14px;
+            box-shadow: var(--shadow)
+        }
+
+        .field-grid {
+            display: grid;
+            grid-template-columns:1fr 1fr;
+            gap: 14px
+        }
+
+        label {
+            display: grid;
+            gap: 7px;
+            font-size: 13px;
+            font-weight: 800;
+            color: #344054
+        }
+
+        input, select, textarea {
+            width: 100%;
+            border: 1px solid #D0D5DD;
+            border-radius: 14px;
+            padding: 13px 14px;
+            font: inherit;
+            color: var(--text);
+            background: #fff;
+            outline: none
+        }
+
+        textarea {
+            min-height: 112px;
+            resize: vertical
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px rgba(242, 183, 5, .16)
+        }
+
+        .form-note {
+            color: var(--muted);
+            font-size: 12px;
+            margin: 0
+        }
+
+        .privacy-check {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-weight: 500;
+            color: #475569
+        }
+
+        .privacy-check input {
+            width: auto;
+            margin-top: 4px
+        }
+
+        footer {
+            background: #06111F;
+            color: #94A3B8;
+            padding: 36px 0;
+            font-size: 14px
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap
+        }
+
+        .footer-logo {
+            height: 42px
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap
+        }
+
+        .footer-links a:hover {
+            color: #fff
+        }
+
+        @media (max-width: 960px) {
+            .hero-grid, .split, .form-wrap {
+                grid-template-columns:1fr
+            }
+
+            .cards, .flow, .security-grid, .price-row {
+                grid-template-columns:1fr
+            }
+
+            .navlinks {
+                display: none
+            }
+
+            .hero {
+                padding-top: 58px
+            }
+
+            .field-grid {
+                grid-template-columns:1fr
+            }
+
+            .panel {
+                padding: 20px
+            }
+
+            .progress {
+                grid-template-columns:1fr 1fr
+            }
+
+            .brand img {
+                width: 220px
+            }
+
+            .footer-inner {
+                align-items: flex-start
+            }
+
+            .amount {
+                margin-left: 0
+            }
+
+            .instrument-row {
+                align-items: flex-start;
+                flex-wrap: wrap
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="topbar">
+<header class="topbar">
     <div class="container nav">
-      <a class="brand" href="/" aria-label="StrumentoSicuro home"><img src="/assets/logo-nav.svg" alt="StrumentoSicuro" /></a>
-      <nav class="navlinks" aria-label="Navigazione principale">
-        <a href="#come-funziona">Come funziona</a>
-        <a href="#per-chi">Per chi è pensato</a>
-        <a href="#negozi">Negozi</a>
-        <a href="#prezzi">Prezzi</a>
-        <a href="#contatti" class="btn btn-primary">Richiedi accesso</a>
-      </nav>
+        <a class="brand" href="/" aria-label="StrumentoSicuro home"><img src="/assets/logo-nav.svg"
+                                                                         alt="StrumentoSicuro"/></a>
+        <nav class="navlinks" aria-label="Navigazione principale">
+            <a href="#come-funziona">Come funziona</a>
+            <a href="#per-chi">Per chi è pensato</a>
+            <a href="#negozi">Negozi</a>
+            <a href="#prezzi">Prezzi</a>
+            <a href="#contatti" class="btn btn-primary">Richiedi accesso</a>
+        </nav>
     </div>
-  </header>
+</header>
 
-  <main>
+<main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Pagamento protetto · Spedizione tracciata · Supporto italiano</div>
-          <h1>Compra e vendi strumenti musicali usati senza <strong>bonifici al buio.</strong></h1>
-          <p class="lead">StrumentoSicuro aiuta privati, musicisti e negozi a concludere compravendite più sicure: l’acquirente paga in modo protetto, il venditore spedisce con tracking e la transazione segue regole chiare.</p>
-          <div class="actions">
-            <a href="#contatti" class="btn btn-primary">Proteggi una compravendita</a>
-            <a href="#come-funziona" class="btn btn-secondary">Scopri come funziona</a>
-          </div>
-          <div class="trust">
-            <span>✓ Ideale per accordi nati su Facebook, Subito, WhatsApp o Mercatino</span>
-            <span>✓ Pensato per strumenti di valore</span>
-          </div>
+        <div class="container hero-grid">
+            <div>
+                <div class="eyebrow">Pagamento protetto · Spedizione tracciata · Supporto italiano</div>
+                <h1>Compra e vendi strumenti musicali usati senza <strong>bonifici al buio.</strong></h1>
+                <p class="lead">StrumentoSicuro aiuta privati, musicisti e negozi a concludere compravendite più sicure:
+                    l’acquirente paga in modo protetto, il venditore spedisce con tracking e la transazione segue regole
+                    chiare.</p>
+                <div class="actions">
+                    <a href="#contatti" class="btn btn-primary">Proteggi una compravendita</a>
+                    <a href="#come-funziona" class="btn btn-secondary">Scopri come funziona</a>
+                </div>
+                <div class="trust">
+                    <span>✓ Ideale per accordi nati su Facebook, Subito, WhatsApp o Mercatino</span>
+                    <span>✓ Pensato per strumenti di valore</span>
+                </div>
+            </div>
+            <aside class="panel" aria-label="Esempio transazione protetta">
+                <div class="panel-head">
+                    <img class="panel-logo" src="/assets/logo.svg" alt="StrumentoSicuro"/>
+                    <span class="safe-badge">In sicurezza</span>
+                </div>
+                <div class="transaction">
+                    <div class="instrument-row">
+                        <div class="instrument-img">🎸</div>
+                        <div><strong>Chitarra elettrica usata</strong><small>Venditore verificato · Spedizione
+                            tracciata</small></div>
+                        <div class="amount">€ 950</div>
+                    </div>
+                    <div class="progress">
+                        <div class="step active">
+                            <div class="dot">1</div>
+                            Pagamento protetto
+                        </div>
+                        <div class="step active">
+                            <div class="dot">2</div>
+                            Spedizione
+                        </div>
+                        <div class="step">
+                            <div class="dot">3</div>
+                            Consegna
+                        </div>
+                        <div class="step">
+                            <div class="dot">4</div>
+                            Conferma
+                        </div>
+                    </div>
+                    <div class="note">Il pagamento non è un semplice bonifico tra sconosciuti: la pratica viene
+                        documentata e la spedizione segue una procedura tracciabile.
+                    </div>
+                </div>
+            </aside>
         </div>
-        <aside class="panel" aria-label="Esempio transazione protetta">
-          <div class="panel-head">
-            <img class="panel-logo" src="/assets/logo.svg" alt="StrumentoSicuro" />
-            <span class="safe-badge">In sicurezza</span>
-          </div>
-          <div class="transaction">
-            <div class="instrument-row">
-              <div class="instrument-img">🎸</div>
-              <div><strong>Chitarra elettrica usata</strong><small>Venditore verificato · Spedizione tracciata</small></div>
-              <div class="amount">€ 950</div>
-            </div>
-            <div class="progress">
-              <div class="step active"><div class="dot">1</div>Pagamento protetto</div>
-              <div class="step active"><div class="dot">2</div>Spedizione</div>
-              <div class="step"><div class="dot">3</div>Consegna</div>
-              <div class="step"><div class="dot">4</div>Conferma</div>
-            </div>
-            <div class="note">Il pagamento non è un semplice bonifico tra sconosciuti: la pratica viene documentata e la spedizione segue una procedura tracciabile.</div>
-          </div>
-        </aside>
-      </div>
     </section>
 
     <section>
-      <div class="container">
-        <div class="section-head"><h2>Il problema non è trovare strumenti usati. È fidarsi dello scambio.</h2><p>Molte trattative nascono già su gruppi, marketplace e passaparola. StrumentoSicuro si inserisce nel momento più delicato: pagamento, spedizione e verifica.</p></div>
-        <div class="cards">
-          <div class="card"><div class="ico">💸</div><h3>Bonifici rischiosi</h3><p>L’acquirente teme di pagare uno sconosciuto. Il venditore teme finte ricevute, ripensamenti o perdite di tempo.</p></div>
-          <div class="card"><div class="ico">📦</div><h3>Spedizioni delicate</h3><p>Chitarre, synth, ampli e microfoni richiedono imballaggi seri, tracking e spesso assicurazione.</p></div>
-          <div class="card"><div class="ico">⚠️</div><h3>Contestazioni confuse</h3><p>Se lo strumento arriva danneggiato o diverso dalla descrizione, servono regole chiare e prove documentate.</p></div>
+        <div class="container">
+            <div class="section-head"><h2>Il problema non è trovare strumenti usati. È fidarsi dello scambio.</h2>
+                <p>Molte trattative nascono già su gruppi, marketplace e passaparola. StrumentoSicuro si inserisce nel
+                    momento più delicato: pagamento, spedizione e verifica.</p></div>
+            <div class="cards">
+                <div class="card">
+                    <div class="ico">💸</div>
+                    <h3>Bonifici rischiosi</h3>
+                    <p>L’acquirente teme di pagare uno sconosciuto. Il venditore teme finte ricevute, ripensamenti o
+                        perdite di tempo.</p></div>
+                <div class="card">
+                    <div class="ico">📦</div>
+                    <h3>Spedizioni delicate</h3>
+                    <p>Chitarre, synth, ampli e microfoni richiedono imballaggi seri, tracking e spesso
+                        assicurazione.</p></div>
+                <div class="card">
+                    <div class="ico">⚠️</div>
+                    <h3>Contestazioni confuse</h3>
+                    <p>Se lo strumento arriva danneggiato o diverso dalla descrizione, servono regole chiare e prove
+                        documentate.</p></div>
+            </div>
         </div>
-      </div>
     </section>
 
     <section class="how" id="come-funziona">
-      <div class="container">
-        <div class="section-head"><h2>Come funziona</h2><p>Un flusso semplice, pensato per ridurre il rischio sia per chi compra sia per chi vende.</p></div>
-        <div class="flow">
-          <div class="card"><div class="flow-num">1</div><div class="ico">📝</div><h3>Create la pratica</h3><p>Inserite prezzo, descrizione, foto, condizioni dello strumento, accessori e modalità di spedizione.</p></div>
-          <div class="card"><div class="flow-num">2</div><div class="ico">🛡️</div><h3>Pagamento protetto</h3><p>L’acquirente paga attraverso un flusso sicuro. Il venditore procede quando la pratica è confermata.</p></div>
-          <div class="card"><div class="flow-num">3</div><div class="ico">🚚</div><h3>Spedizione tracciata</h3><p>Tracking, foto dell’imballaggio e, quando serve, assicurazione e prove video riducono le contestazioni.</p></div>
-          <div class="card"><div class="flow-num">4</div><div class="ico">✅</div><h3>Conferma finale</h3><p>L’acquirente verifica lo strumento. Se tutto è conforme, la compravendita viene completata.</p></div>
+        <div class="container">
+            <div class="section-head"><h2>Come funziona</h2>
+                <p>Un flusso semplice, pensato per ridurre il rischio sia per chi compra sia per chi vende.</p></div>
+            <div class="flow">
+                <div class="card">
+                    <div class="flow-num">1</div>
+                    <div class="ico">📝</div>
+                    <h3>Create la pratica</h3>
+                    <p>Inserite prezzo, descrizione, foto, condizioni dello strumento, accessori e modalità di
+                        spedizione.</p></div>
+                <div class="card">
+                    <div class="flow-num">2</div>
+                    <div class="ico">🛡️</div>
+                    <h3>Pagamento protetto</h3>
+                    <p>L’acquirente paga attraverso un flusso sicuro. Il venditore procede quando la pratica è
+                        confermata.</p></div>
+                <div class="card">
+                    <div class="flow-num">3</div>
+                    <div class="ico">🚚</div>
+                    <h3>Spedizione tracciata</h3>
+                    <p>Tracking, foto dell’imballaggio e, quando serve, assicurazione e prove video riducono le
+                        contestazioni.</p></div>
+                <div class="card">
+                    <div class="flow-num">4</div>
+                    <div class="ico">✅</div>
+                    <h3>Conferma finale</h3>
+                    <p>L’acquirente verifica lo strumento. Se tutto è conforme, la compravendita viene completata.</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <section id="per-chi">
-      <div class="container">
-        <div class="section-head"><h2>Per chi è pensato</h2><p>Non sostituisce per forza i marketplace esistenti: protegge le compravendite che nascono ovunque.</p></div>
-        <div class="cards">
-          <div class="card"><div class="ico">🎧</div><h3>Privati e musicisti</h3><p>Hai trovato uno strumento su Facebook, Subito, WhatsApp o tramite passaparola? Puoi proporre una transazione protetta.</p></div>
-          <div class="card"><div class="ico">🏪</div><h3>Negozi musicali</h3><p>Vendi usato, permute o conto vendita online offrendo al cliente un flusso più sicuro e professionale.</p></div>
-          <div class="card"><div class="ico">🛠️</div><h3>Tecnici e liutai</h3><p>Diventa punto di verifica, supporto, imballaggio o spedizione per strumenti di valore.</p></div>
+        <div class="container">
+            <div class="section-head"><h2>Per chi è pensato</h2>
+                <p>Non sostituisce per forza i marketplace esistenti: protegge le compravendite che nascono ovunque.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="ico">🎧</div>
+                    <h3>Privati e musicisti</h3>
+                    <p>Hai trovato uno strumento su Facebook, Subito, WhatsApp o tramite passaparola? Puoi proporre una
+                        transazione protetta.</p></div>
+                <div class="card">
+                    <div class="ico">🏪</div>
+                    <h3>Negozi musicali</h3>
+                    <p>Vendi usato, permute o conto vendita online offrendo al cliente un flusso più sicuro e
+                        professionale.</p></div>
+                <div class="card">
+                    <div class="ico">🛠️</div>
+                    <h3>Tecnici e liutai</h3>
+                    <p>Diventa punto di verifica, supporto, imballaggio o spedizione per strumenti di valore.</p></div>
+            </div>
         </div>
-      </div>
     </section>
 
     <section class="highlight" id="negozi">
-      <div class="container split">
-        <div>
-          <div class="eyebrow" style="background:#fff;color:#8A6200;border-color:#FDE68A">Per negozi e partner locali</div>
-          <h2 style="font-size:clamp(32px,4vw,48px);letter-spacing:-.055em;line-height:1.05;margin:0 0 16px">Trasforma usato, permute e conto vendita in vendite online più sicure.</h2>
-          <p style="color:#475569;font-size:18px;margin:0">StrumentoSicuro può aiutare i negozi a vendere strumenti usati a distanza, oppure diventare un punto fiduciario per verifiche, foto, imballaggio e spedizione.</p>
-          <ul class="checklist"><li>Pagamento protetto per vendite a distanza</li><li>Gestione della spedizione tracciata</li><li>Possibilità di offrire verifica strumento e imballaggio</li><li>Nuovo servizio da proporre ai clienti che vogliono vendere il proprio strumento</li></ul>
+        <div class="container split">
+            <div>
+                <div class="eyebrow" style="background:#fff;color:#8A6200;border-color:#FDE68A">Per negozi e partner
+                    locali
+                </div>
+                <h2 style="font-size:clamp(32px,4vw,48px);letter-spacing:-.055em;line-height:1.05;margin:0 0 16px">
+                    Trasforma usato, permute e conto vendita in vendite online più sicure.</h2>
+                <p style="color:#475569;font-size:18px;margin:0">StrumentoSicuro può aiutare i negozi a vendere
+                    strumenti usati a distanza, oppure diventare un punto fiduciario per verifiche, foto, imballaggio e
+                    spedizione.</p>
+                <ul class="checklist">
+                    <li>Pagamento protetto per vendite a distanza</li>
+                    <li>Gestione della spedizione tracciata</li>
+                    <li>Possibilità di offrire verifica strumento e imballaggio</li>
+                    <li>Nuovo servizio da proporre ai clienti che vogliono vendere il proprio strumento</li>
+                </ul>
+            </div>
+            <div class="partner-box"><h3>Diventa un punto StrumentoSicuro</h3>
+                <p style="color:#64748B;margin:0 0 20px">I partner possono supportare le transazioni più delicate:
+                    controllo visivo, video di funzionamento, foto, imballaggio e spedizione.</p>
+                <div class="cards" style="grid-template-columns:1fr;gap:14px">
+                    <div class="card" style="box-shadow:none"><strong>Verifica base</strong>
+                        <p>Controllo condizioni, seriale, accessori e funzionamento dichiarato.</p></div>
+                    <div class="card" style="box-shadow:none"><strong>Imballaggio e spedizione</strong>
+                        <p>Preparazione dello strumento e invio con tracking e assicurazione quando necessaria.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="partner-box"><h3>Diventa un punto StrumentoSicuro</h3><p style="color:#64748B;margin:0 0 20px">I partner possono supportare le transazioni più delicate: controllo visivo, video di funzionamento, foto, imballaggio e spedizione.</p><div class="cards" style="grid-template-columns:1fr;gap:14px"><div class="card" style="box-shadow:none"><strong>Verifica base</strong><p>Controllo condizioni, seriale, accessori e funzionamento dichiarato.</p></div><div class="card" style="box-shadow:none"><strong>Imballaggio e spedizione</strong><p>Preparazione dello strumento e invio con tracking e assicurazione quando necessaria.</p></div></div></div>
-      </div>
     </section>
 
-    <div class="security-band"><div class="container security-grid"><div class="security-item"><div class="ico">🛡️</div><div><strong>Pagamento protetto</strong><p>Più sicurezza rispetto al bonifico diretto tra sconosciuti.</p></div></div><div class="security-item"><div class="ico">🚚</div><div><strong>Spedizione tracciata</strong><p>Tracking, documentazione e procedure chiare.</p></div></div><div class="security-item"><div class="ico">🎧</div><div><strong>Supporto italiano</strong><p>Fase pilota gestita manualmente, con attenzione al caso reale.</p></div></div></div></div>
+    <div class="security-band">
+        <div class="container security-grid">
+            <div class="security-item">
+                <div class="ico">🛡️</div>
+                <div><strong>Pagamento protetto</strong>
+                    <p>Più sicurezza rispetto al bonifico diretto tra sconosciuti.</p></div>
+            </div>
+            <div class="security-item">
+                <div class="ico">🚚</div>
+                <div><strong>Spedizione tracciata</strong>
+                    <p>Tracking, documentazione e procedure chiare.</p></div>
+            </div>
+            <div class="security-item">
+                <div class="ico">🎧</div>
+                <div><strong>Supporto italiano</strong>
+                    <p>Fase pilota gestita manualmente, con attenzione al caso reale.</p></div>
+            </div>
+        </div>
+    </div>
 
-    <section class="pricing" id="prezzi"><div class="container"><div class="section-head"><h2>Prezzi semplici per validare il servizio</h2><p>Durante la fase iniziale raccogliamo richieste e transazioni pilota. La commissione definitiva sarà comunicata prima di ogni pratica.</p></div><div class="pricing-box"><h3 style="font-size:32px;letter-spacing:-.04em;margin:0 0 10px">Ipotesi di lancio</h3><p style="color:#C8D4E3;margin:0">Un costo proporzionato al valore dello strumento, pensato soprattutto per compravendite dove il rischio percepito è alto.</p><div class="price-row"><div class="price-card"><strong>5%</strong><span>Commissione indicativa sulla transazione</span></div><div class="price-card"><strong>15€</strong><span>Minimo indicativo per pratiche piccole</span></div><div class="price-card"><strong>Da definire</strong><span>Spedizione e assicurazione in base allo strumento</span></div></div></div></div></section>
+    <section class="pricing" id="prezzi">
+        <div class="container">
+            <div class="section-head"><h2>Prezzi semplici per validare il servizio</h2>
+                <p>Durante la fase iniziale raccogliamo richieste e transazioni pilota. La commissione definitiva sarà
+                    comunicata prima di ogni pratica.</p></div>
+            <div class="pricing-box"><h3 style="font-size:32px;letter-spacing:-.04em;margin:0 0 10px">Ipotesi di
+                lancio</h3>
+                <p style="color:#C8D4E3;margin:0">Un costo proporzionato al valore dello strumento, pensato soprattutto
+                    per compravendite dove il rischio percepito è alto.</p>
+                <div class="price-row">
+                    <div class="price-card"><strong>5%</strong><span>Commissione indicativa sulla transazione</span>
+                    </div>
+                    <div class="price-card"><strong>15€</strong><span>Minimo indicativo per pratiche piccole</span>
+                    </div>
+                    <div class="price-card"><strong>Da definire</strong><span>Spedizione e assicurazione in base allo strumento</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="form-section" id="contatti">
-      <div class="container form-wrap">
-        <div class="form-copy"><h2>Hai una compravendita da proteggere?</h2><p>Stiamo raccogliendo i primi casi reali: privati che devono comprare o vendere uno strumento, negozi interessati a vendere usato online e tecnici/partner locali.</p><ul class="checklist"><li>Chitarre, bassi, synth, tastiere, ampli, pedaliere, microfoni e home studio</li><li>Ideale sopra i 300–500€ di valore</li><li>Risposta manuale nella fase pilota</li></ul></div>
-        <form action="https://formspree.io/f/mgoqyoga" method="POST">
-          <input type="hidden" name="_subject" value="Nuova richiesta da StrumentoSicuro" />
-          <input type="hidden" name="_next" value="https://strumentosicuro.it/grazie.html" />
-          <div class="field-grid"><label>Nome<input type="text" name="nome" placeholder="Mario Rossi" required /></label><label>Email<input type="email" name="email" placeholder="nome@email.it" required /></label></div>
-          <div class="field-grid"><label>Sei un/una<select name="profilo" required><option value="">Seleziona</option><option>Acquirente privato</option><option>Venditore privato</option><option>Negozio musicale</option><option>Tecnico / liutaio / partner</option></select></label><label>Valore indicativo<select name="valore" required><option value="">Seleziona</option><option>Meno di 300€</option><option>300€ – 700€</option><option>700€ – 1.500€</option><option>Oltre 1.500€</option></select></label></div>
-          <label>Strumento o servizio richiesto<input type="text" name="strumento" placeholder="Es. Gibson Les Paul, synth, amplificatore, conto vendita..." required /></label>
-          <label>Raccontaci la situazione<textarea name="messaggio" placeholder="Hai già trovato acquirente o venditore? Serve spedizione? Sei un negozio interessato a diventare partner?"></textarea></label>
-          <label class="privacy-check"><input type="checkbox" name="privacy" required /><span>Ho letto la <a href="/privacy.html">Privacy Policy</a> e accetto di essere ricontattato in merito alla richiesta.</span></label>
-          <button class="btn btn-primary" type="submit">Invia richiesta</button>
-          <p class="form-note">Nota: nella fase pilota StrumentoSicuro raccoglie richieste e valuta manualmente le transazioni. Il servizio completo di pagamento protetto sarà attivato con provider idonei.</p>
-        </form>
-      </div>
+        <div class="container form-wrap">
+            <div class="form-copy"><h2>Hai una compravendita da proteggere?</h2>
+                <p>Stiamo raccogliendo i primi casi reali: privati che devono comprare o vendere uno strumento, negozi
+                    interessati a vendere usato online e tecnici/partner locali.</p>
+                <ul class="checklist">
+                    <li>Chitarre, bassi, synth, tastiere, ampli, pedaliere, microfoni e home studio</li>
+                    <li>Ideale sopra i 300–500€ di valore</li>
+                    <li>Risposta manuale nella fase pilota</li>
+                </ul>
+            </div>
+            <form action="https://formspree.io/f/mgoqyoga" method="POST">
+                <input type="hidden" name="_subject" value="Nuova richiesta da StrumentoSicuro"/>
+                <input type="hidden" name="_next" value="https://strumentosicuro.it/grazie.html"/>
+                <div class="field-grid"><label>Nome<input type="text" name="nome" placeholder="Mario Rossi"
+                                                          required/></label><label>Email<input type="email" name="email"
+                                                                                               placeholder="nome@email.it"
+                                                                                               required/></label></div>
+                <div class="field-grid"><label>Sei un/una<select name="profilo" required>
+                    <option value="">Seleziona</option>
+                    <option>Acquirente privato</option>
+                    <option>Venditore privato</option>
+                    <option>Negozio musicale</option>
+                    <option>Tecnico / liutaio / partner</option>
+                </select></label><label>Valore indicativo<select name="valore" required>
+                    <option value="">Seleziona</option>
+                    <option>Meno di 300€</option>
+                    <option>300€ – 700€</option>
+                    <option>700€ – 1.500€</option>
+                    <option>Oltre 1.500€</option>
+                </select></label></div>
+                <label>Strumento o servizio richiesto<input type="text" name="strumento"
+                                                            placeholder="Es. Gibson Les Paul, synth, amplificatore, conto vendita..."
+                                                            required/></label>
+                <label>Raccontaci la situazione<textarea name="messaggio"
+                                                         placeholder="Hai già trovato acquirente o venditore? Serve spedizione? Sei un negozio interessato a diventare partner?"></textarea></label>
+                <label class="privacy-check"><input type="checkbox" name="privacy" required/><span>Ho letto la <a
+                        href="/privacy.html">Privacy Policy</a> e accetto di essere ricontattato in merito alla richiesta.</span></label>
+                <button class="btn btn-primary" type="submit">Invia richiesta</button>
+                <p class="form-note">Nota: nella fase pilota StrumentoSicuro raccoglie richieste e valuta manualmente le
+                    transazioni. Il servizio completo di pagamento protetto sarà attivato con provider idonei.</p>
+            </form>
+        </div>
     </section>
-  </main>
+</main>
 
-  <footer><div class="container footer-inner"><img class="footer-logo" src="/assets/logo-light.svg" alt="StrumentoSicuro" /><div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/cookie.html">Cookie Policy</a><a href="/termini.html">Termini e Condizioni</a></div><div>© 2026 StrumentoSicuro</div></div></footer>
+<footer>
+    <div class="container footer-inner"><img class="footer-logo" src="/assets/logo-light.svg" alt="StrumentoSicuro"/>
+        <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/cookie.html">Cookie Policy</a><a
+                href="/termini.html">Termini e Condizioni</a></div>
+        <div>© 2026 StrumentoSicuro</div>
+    </div>
+</footer>
 </body>
 </html>
