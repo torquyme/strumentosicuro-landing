@@ -620,6 +620,44 @@
             color: #fff
         }
 
+        .cookie-banner {
+            position: fixed;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+            z-index: 120;
+            display: none;
+        }
+
+        .cookie-banner-inner {
+            margin: 0 auto;
+            width: min(980px, 100%);
+            background: #0D1B2A;
+            color: #E2E8F0;
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: 18px;
+            padding: 16px;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, .28);
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            font-size: 14px;
+            color: #D7E3F2;
+            max-width: 700px;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
         @media (max-width: 960px) {
             .hero-grid, .split, .form-wrap {
                 grid-template-columns:1fr
@@ -664,6 +702,16 @@
             .instrument-row {
                 align-items: flex-start;
                 flex-wrap: wrap
+            }
+
+            .cookie-banner {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+
+            .cookie-banner-inner {
+                padding: 14px;
             }
         }
     </style>
@@ -905,7 +953,7 @@
                     <li>Risposta manuale nella fase pilota</li>
                 </ul>
             </div>
-            <form action="https://formspree.io/f/xjgzoona" method="POST">
+            <form class="contact-form" action="https://formspree.io/f/xjgzoona" method="POST">
                 <input type="hidden" name="_subject" value="Nuova richiesta da StrumentoSicuro"/>
                 <input type="hidden" name="_next" value="https://strumentosicuro.it/grazie.html"/>
                 <div class="field-grid"><label>Nome<input type="text" name="nome" placeholder="Mario Rossi"
@@ -947,5 +995,91 @@
         <div>© 2026 StrumentoSicuro</div>
     </div>
 </footer>
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Preferenze cookie">
+    <div class="cookie-banner-inner">
+        <p>Usiamo cookie tecnici e, solo con il tuo consenso, analytics (GA4) per migliorare il sito. Maggiori dettagli
+            nella <a href="/cookie.html" style="color:#F2B705;text-decoration:underline">Cookie Policy</a>.</p>
+        <div class="cookie-actions">
+            <button id="cookie-accept" class="btn btn-primary" type="button">Accetta analytics</button>
+            <button id="cookie-reject" class="btn btn-secondary" type="button">Rifiuta</button>
+        </div>
+    </div>
+</div>
+<script>
+    const GA_MEASUREMENT_ID = "G-ZKE9BS41S1";
+
+    function loadGoogleAnalytics() {
+        if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === "G-XXXXXXXXXX" || window.__gaLoaded) return;
+        window.__gaLoaded = true;
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
+        document.head.appendChild(script);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        window.gtag = gtag;
+        gtag("js", new Date());
+        gtag("config", GA_MEASUREMENT_ID);
+    }
+
+    function trackContactCta(label) {
+        if (typeof window.gtag !== "function") return;
+        window.gtag("event", "contact_click", {
+            event_category: "engagement",
+            event_label: label || "contact_form_cta"
+        });
+    }
+
+    function trackContactFormSubmit() {
+        if (typeof window.gtag !== "function") return;
+        window.gtag("event", "contact_form_submit", {
+            event_category: "lead",
+            event_label: "formspree_contact_form"
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const banner = document.getElementById("cookie-banner");
+        const accept = document.getElementById("cookie-accept");
+        const reject = document.getElementById("cookie-reject");
+        const consent = localStorage.getItem("analytics_consent");
+
+        if (consent === "accepted") {
+            loadGoogleAnalytics();
+        } else if (consent !== "rejected" && banner) {
+            banner.style.display = "block";
+        }
+
+        if (accept) {
+            accept.addEventListener("click", function () {
+                localStorage.setItem("analytics_consent", "accepted");
+                if (banner) banner.style.display = "none";
+                loadGoogleAnalytics();
+            });
+        }
+
+        if (reject) {
+            reject.addEventListener("click", function () {
+                localStorage.setItem("analytics_consent", "rejected");
+                if (banner) banner.style.display = "none";
+            });
+        }
+
+        document.querySelectorAll('a[href="#contatti"]').forEach(function (link) {
+            link.addEventListener("click", function () {
+                trackContactCta(link.textContent.trim() || "contact_form_cta");
+            });
+        });
+
+        document.querySelectorAll("form.contact-form").forEach(function (form) {
+            form.addEventListener("submit", function () {
+                trackContactFormSubmit();
+            });
+        });
+    });
+</script>
 </body>
 </html>
+
